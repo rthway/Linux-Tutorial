@@ -1,0 +1,43 @@
+MOTD setup in Centos Linux:
+==========================
+
+I) 1st create a file like mybanner
+
+# vi /etc/mybanner
+then paste your own text like this and save it.
+
+ ########################################################
+ #     						  	#
+ #	_____              _                      	#
+ #	|  __ \            | |                    	#
+ #	| |__) | ___   ___ | |__    __ _  _ __    	#
+ #	|  _  / / _ \ / __|| '_ \  / _` || '_ \   	#
+ #	| | \ \| (_) |\__ \| | | || (_| || | | |  	#
+ #	|_|  \_\\___/ |___/|_| |_| \__,_||_| |_|  	#
+ #                                            	  	#
+ #++++++++++++++++++++++++++++++++++++++++++++++++++++++#
+ #							#
+ # Unauthorized access to this machine is prohibited!!  #
+ #     							#
+ ########################################################
+ 
+ Then,
+
+II) Edit your sshd_config file and give a banner file location and save it. like this 
+
+# vi /etc/ssh/sshd_config
+
+
+113
+114
+115 # default banner path
+116 Banner /etc/mybanner
+117
+118
+
+
+III) Restart your ssh service 
+
+# service sshd restart
+
+
